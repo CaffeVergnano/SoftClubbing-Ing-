@@ -217,7 +217,7 @@ body {
   <div class="app">
     <h1 class="title">Coffee Personas</h1>
     <p class="subtitle">
-      Inserisci la tua email, rispondi alle 5 domande e scopri quale coffee persona sei.
+     Enter your email, answer the 5 questions, and discover which coffee persona you are.
     </p>
 
     <div id="email-step">
@@ -230,26 +230,26 @@ body {
         />
 
        <div class="privacy-box">
-  <p>Ai sensi degli artt. 6-8 del Reg. (UE) 2016/679</p>
+  <p>Pursuant to Articles 6–8 of Regulation (EU) 2016/679</p>
 
   <label class="privacy-label">
     <input type="checkbox" id="marketing-check" />
     <span>
-      Autorizzo il trattamento dei dati personali per promozione e vendita di prodotti e servizi,
-      invio di informazioni commerciali, marketing e rilevazione del grado di soddisfazione.
+    I authorize the processing of my personal data for the promotion and sale of products and services, 
+    the sending of commercial information, marketing activities, and the measurement of customer satisfaction.
     </span>
   </label>
 
   <label class="privacy-label">
     <input type="checkbox" id="profiling-check" />
     <span>
-      Autorizzo la profilazione delle attività e degli interessi specifici relativi alle comunicazioni inviate
-      al fine di proporre offerte commerciali mirate e report di analisi.
+      I authorize the profiling of activities and specific interests related to the communications sent,
+      in order to provide targeted commercial offers and analysis reports.
     </span>
   </label>
 
   <p class="privacy-small">
-    Per leggere l’intera informativa sulle attività di marketing
+To read the full privacy notice on marketing activities
     <a href="https://vergnano1882.sharepoint.com/:w:/r/Shared%20Documents/informativa%20attivit%C3%A0%20di%20marketing.docx?d=w419fd2e5fd8e4fb292bc37df55b0ca2f&csf=1&web=1&e=aUnSCa" target="_blank">
       clicca qui
     </a>.
@@ -269,13 +269,13 @@ body {
 
   const questions = [
     {
-      question: "Come inizi la tua giornata?",
+      question: "How do you start your day?",
       answers: [
-        { text: "La sveglia suona e sono subito attivo, zero attese", type: "ER" },
-        { text: "Con calma, magari chiacchierando o aspettando la prossima sveglia da posticipare", type: "CS" },
-        { text: "Organizzo tutto, voglio performare al meglio", type: "MP" },
-        { text: "Lento e mindful, mi aspetta una bella colazione", type: "DZ" },
-        { text: "Non ho ancora smesso dalla sera prima", type: "EM" }
+        { text: "The alarm goes off and I’m instantly active, no waiting around.", type: "ER" },
+        { text: "Slowly, maybe chatting or waiting for the next alarm to snooze.", type: "CS" },
+        { text: "I plan everything; I want to perform at my best.", type: "MP" },
+        { text: "Slow and mindful, with a nice breakfast waiting for me.", type: "DZ" },
+        { text: "I haven’t stopped since the night before.", type: "EM" }
       ]
     },
     {

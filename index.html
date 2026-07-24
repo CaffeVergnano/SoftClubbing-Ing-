@@ -5,223 +5,359 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coffee Personas Quiz</title>
 
-<style>
-    * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background-image: url("https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/refs/heads/main/sfondo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  color: #6f4e37;
-}
-
-.app {
-  width: 100%;
-  max-width: 820px;
-  background: #ede5da; /* Colore del box con trasparenza */
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 20px 50px rgba(59, 36, 23, 0.15);
-}
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-}
-
-.subtitle {
-  text-align: center;
-  color: #6f4e37; 
-  margin-bottom: 28px;
-  line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
-}
-
-.email-box {
-  display: grid;
-  gap: 14px;
-}
-
-.email-input {
-  width: 100%;
-  border: 1px solid #e0cbbb;
-  border-radius: 16px;
-  padding: 16px 18px;
-  font-size: 1rem;
-  color: #3b2417;
-  background: #fff;
-}
-
-.privacy-label {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #6a4a3a;
-}
-
-.start-btn,
-.answer-btn,
-.restart-btn {
-  border: none;
-  border-radius: 16px;
-  padding: 16px 18px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.start-btn,
-.restart-btn {
-  background: #6f4e37;
-  color: white;
-  width: 100%;
-}
-
-.start-btn:hover,
-.restart-btn:hover {
-  background: #5b3f2c;
-  transform: translateY(-2px);
-}
-
-.progress-wrap {
-  margin-bottom: 24px;
-}
-
-.progress-text {
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  color: #6a4a3a;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background: #ead9cc;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background: linear-gradient(90deg, #6f4e37, #b57b55);
-  transition: width 0.3s ease;
-}
-
-.question {
-  font-size: 1.4rem;
-  margin-bottom: 22px;
-  line-height: 1.4;
-}
-
-.answers {
-  display: grid;
-  gap: 14px;
-}
-
-.answer-btn {
-  background: #6f4e37;
-  color: white;
-  text-align: left;
-}
-}
-
-.answer-btn:hover {
-  background: #e8d2c1;
-  transform: translateY(-2px);
-}
-
-.result-badge {
-  display: inline-block;
-  margin-bottom: 16px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: #f0dfd2;
-  color: #6f4e37;
-  font-weight: bold;
-}
-
-.result-title {
-  font-size: 2rem;
-  margin-bottom: 16px;
-}
-
-.result-description {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #5c4033;
-  margin-bottom: 24px;
-  white-space: pre-line;
-  text-align: left;
-}
-
-.result-image {
-  width: 100%;
-  max-width: 200px;
-  margin-bottom: 16px;
-}
-
-.error-message {
-  color: #9b2c2c;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.footer-note {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #7b6253;
-}
-
-@media (max-width: 640px) {
-  .app {
-    padding: 24px 18px;
+ <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
   }
+
+  body {
+    min-height: 100vh;
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/refs/heads/main/sfondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #6f4e37;
+  }
+
+  .app {
+    width: 100%;
+    max-width: 820px;
+    padding: 32px;
+
+    background: #ede5da;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(59, 36, 23, 0.15);
+  }
+
+  /* Titolo iniziale */
 
   .title {
-    font-size: 1.7rem;
+    margin-bottom: 10px;
+
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
   }
 
+  .subtitle {
+    margin-bottom: 28px;
+
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    color: #6f4e37;
+  }
+
+  /* Email e privacy */
+
+  .email-box {
+    display: grid;
+    gap: 14px;
+  }
+
+  .email-input {
+    width: 100%;
+    padding: 16px 18px;
+
+    border: 1px solid #e0cbbb;
+    border-radius: 16px;
+    background: #ffffff;
+
+    font-size: 1rem;
+    color: #3b2417;
+  }
+
+  .email-input:focus {
+    outline: 2px solid #b57b55;
+    outline-offset: 2px;
+  }
+
+  .privacy-box {
+    display: grid;
+    gap: 12px;
+
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #6a4a3a;
+  }
+
+  .privacy-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .privacy-label input {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .privacy-small {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .privacy-small a {
+    color: #6f4e37;
+    font-weight: 700;
+  }
+
+  /* Pulsanti */
+
+  .start-btn,
+  .answer-btn,
+  .restart-btn {
+    padding: 16px 18px;
+
+    border: none;
+    border-radius: 16px;
+
+    font-size: 1rem;
+    cursor: pointer;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .start-btn,
+  .restart-btn {
+    width: 100%;
+    background: #6f4e37;
+    color: #ffffff;
+  }
+
+  .start-btn:hover,
+  .restart-btn:hover {
+    background: #5b3f2c;
+    transform: translateY(-2px);
+  }
+
+  /* Barra di avanzamento */
+
+  .progress-wrap {
+    margin-bottom: 24px;
+  }
+
+  .progress-text {
+    margin-bottom: 8px;
+
+    font-size: 0.95rem;
+    color: #6a4a3a;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+    background: #ead9cc;
+    border-radius: 999px;
+  }
+
+  .progress {
+    height: 100%;
+
+    background: linear-gradient(90deg, #6f4e37, #b57b55);
+    transition: width 0.3s ease;
+  }
+
+  /* Domande */
+
   .question {
-    font-size: 1.2rem;
+    margin-bottom: 22px;
+
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .answers {
+    display: grid;
+    gap: 14px;
+  }
+
+  .answer-btn {
+    width: 100%;
+
+    background: #6f4e37;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .answer-btn:hover {
+    background: #e8d2c1;
+    color: #5c4033;
+    transform: translateY(-2px);
+  }
+
+  /* Risultato */
+
+  .result-badge {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+
+    border-radius: 999px;
+    background: #f0dfd2;
+
+    color: #6f4e37;
+    font-weight: 700;
   }
 
   .result-title {
-    font-size: 1.6rem;
+    margin-bottom: 16px;
+    font-size: 2rem;
+  }
+
+  .result-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-bottom: 24px;
+  }
+
+  .result-image {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
   }
 
   .result-description {
-    font-size: 0.98rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #5c4033;
+    text-align: left;
+    white-space: normal;
   }
-}
-  </style>
+
+  /* Ogni blocco: Mood, Combo, Descrizione, Energia, Flags */
+
+  .result-section {
+    margin-bottom: 24px;
+  }
+
+  .result-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .result-label {
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .result-description p {
+    margin: 0;
+  }
+
+  .result-description ul {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .result-description li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+
+  .result-description li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Spazio tra descrizione e pulsante */
+
+  .restart-btn {
+    margin-top: 32px;
+  }
+
+  /* Messaggi */
+
+  .error-message {
+    font-size: 0.9rem;
+    color: #9b2c2c;
+    text-align: center;
+  }
+
+  .footer-note {
+    margin-top: 20px;
+
+    font-size: 0.9rem;
+    color: #7b6253;
+    text-align: center;
+  }
+
+  /* Mobile */
+
+  @media (max-width: 640px) {
+    body {
+      padding: 14px;
+      align-items: flex-start;
+    }
+
+    .app {
+      padding: 24px 18px;
+      border-radius: 18px;
+    }
+
+    .title {
+      font-size: 1.7rem;
+    }
+
+    .question {
+      font-size: 1.2rem;
+    }
+
+    .result-title {
+      font-size: 1.6rem;
+    }
+
+    .result-description {
+      font-size: 0.98rem;
+    }
+
+    .result-section {
+      margin-bottom: 20px;
+    }
+
+    .result-images {
+      gap: 12px;
+    }
+
+    .result-image {
+      max-width: 160px;
+    }
+
+    .restart-btn {
+      margin-top: 26px;
+    }
+  }
+</style>
 </head>
 
 <body>
   <div class="app">
-    <h1 class="title">Coffee Personas</h1>
-    <p class="subtitle">
-     Enter your email, answer the 5 questions, and discover which coffee persona you are.
-    </p>
+<h1 class="title">Coffee that matches your vibe</h1>
 
-    <div id="email-step">
+<p class="subtitle">
+Enter your email, answer the 5 questions, and discover which coffee persona you are.
+</p>
+
+<div id="email-step">
       <div class="email-box">
         <input
           type="email"
@@ -236,7 +372,7 @@ body {
   <label class="privacy-label">
     <input type="checkbox" id="marketing-check" />
     <span>
-    I authorize the processing of my personal data for the promotion and sale of products and services, 
+ I authorize the processing of my personal data for the promotion and sale of products and services, 
     the sending of commercial information, marketing activities, and the measurement of customer satisfaction.
     </span>
   </label>
@@ -244,15 +380,15 @@ body {
   <label class="privacy-label">
     <input type="checkbox" id="profiling-check" />
     <span>
-      I authorize the profiling of activities and specific interests related to the communications sent,
+ I authorize the profiling of activities and specific interests related to the communications sent,
       in order to provide targeted commercial offers and analysis reports.
     </span>
   </label>
 
   <p class="privacy-small">
-To read the full privacy notice on marketing activities
+   To read the full privacy notice on marketing activities
     <a href="https://vergnano1882.sharepoint.com/:w:/r/Shared%20Documents/informativa%20attivit%C3%A0%20di%20marketing.docx?d=w419fd2e5fd8e4fb292bc37df55b0ca2f&csf=1&web=1&e=aUnSCa" target="_blank">
-      clicca qui
+      click here
     </a>.
   </p>
 </div>
@@ -280,7 +416,7 @@ To read the full privacy notice on marketing activities
       ]
     },
     {
-      question: "What's your morning soundtrack? ",
+   question: "What's your morning soundtrack? ",
       answers: [
         { text: "Rock", type: "ER" },
         { text: "Reggaeton & Latin Pop ", type: "CS" },
@@ -290,7 +426,7 @@ To read the full privacy notice on marketing activities
       ]
     },
     {
-      question: "What do you look for in your coffee? ",
+ question: "What do you look for in your coffee? ",
       answers: [
         { text: "The right boost to get me going ", type: "ER" },
         { text: "A moment to share with others ", type: "CS" },
@@ -300,7 +436,7 @@ To read the full privacy notice on marketing activities
       ]
     },
     {
-      question: "What's your Morning Club vibe?  ",
+ question: "What's your Morning Club vibe?  ",
       answers: [
         { text: "I'm always on the move—I never stop", type: "ER" },
         { text: "I chat with everyone. Networking is my favorite sport", type: "CS" },
@@ -327,125 +463,200 @@ To read the full privacy notice on marketing activities
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/espresso.png",
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/Espresso%20Raver.png"
       ],
-      description: `The Mood: “Waking up is my mainstage".
-      
-Description: You turn the first hours of the day into an explosion of energy: the world lights up, music blasts through the headphones of your favorite playlist, and every step charges you up. There’s no time to waste, only a rhythm to follow. With you, things are never boring, but it’s better not to talk to you before your first coffee.
+description: `
+  <div class="result-section">
+    <div class="result-label">Il Mood</div>
+    <p>"The Mood: “Waking up is my mainstage".</p>
+  </div>
 
-Energy: 100% pure & uncompromising.
+  <div class="result-section">
+    <div class="result-label">La tua combo</div>
+    <p>Your combo: Espresso, ACE juice & plain croissant</p>
+  </div>
 
-Green Flags:
+  <div class="result-section">
+    <div class="result-label">Description:</div>
+    <p>You turn the first hours of the day into an explosion of energy: the world lights up, music blasts through the headphones of your favorite playlist, and every step charges you up. There’s no time to waste, only a rhythm to follow. With you, things are never boring, but it’s better not to talk to you before your first coffee.</p>
+  </div>
 
-* You’re the friend who always suggests something new to do
-* Always straight to the point, no beating around the bush
-* Super productive
+  <div class="result-section">
+    <div class="result-label">Energy:</div>
+    <p>100%  pure & uncompromising </p>
+  </div>
 
-Red Flags:
+  <div class="result-section">
+    <div class="result-label">Green Flags:</div>
+    <ul>
+      <li>You’re the friend who always suggests something new to do</li>
+      <li>Always straight to the point, no beating around the bush</li>
+      <li>Super productive</li>
+    </ul>
+  </div>
 
-* Chronically impatient
-* You reply “Ok” when you’re angry
-* You judge anyone who sleeps more than 7 hours
+  <div class="result-section">
+    <div class="result-label">Red Flags:</div>
+    <ul>
+      <li>Chronically impatient</li>
+      <li>You reply “Ok” when you’re angry</li>
+      <li>You judge anyone who sleeps more than 7 hours</li>
+    </ul>
+  </div>
+`
 
-Your combo: Espresso, ACE juice & plain croissant`
     },
     CS: {
       image: [
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/cappuccino.png",
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/Cappuccino%20Socializer.png"
       ],
-      description: `The Mood: “The rhythm starts with good company".
-      
-Description: Your energy comes from interacting with others: conversations, shared experiences, or simply being with a group charge you up. Every sip of coffee is a chance to exchange ideas. For you, there’s no better way to start a good day than with breakfast among friends. You’re in no rush to dive into the daily chaos; you prefer to enjoy the foam of conversation while the beat of the day slowly builds.
-
-Energy: Starts at 30% and reaches 100% by the evening.
-
-Green Flags:
-
-* Empathetic and sensitive
-* Always up to date on the latest gossip
-* Without you, nights out aren’t spicy enough to be worth telling
-
-Red Flags:
-
-* Talkative
-* Eternally indecisive
-* Easily influenced by other people’s opinions
-
-Your combo: Cappuccino, peach juice & custard croissant`
+      description: `  <div class="result-section">
+    <div class="result-label"> The Mood </div>
+    <p>" The rhythm starts with good company ".</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label"> Your combo</div>
+    <p> Cappuccino, peach juice & custard croissant </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Description:</div>
+    <p> Your energy comes from interacting with others: conversations, shared experiences, or simply being with a group charge you up. Every sip of coffee is a chance to exchange ideas. For you, there’s no better way to start a good day than with breakfast among friends. You’re in no rush to dive into the daily chaos; you prefer to enjoy the foam of conversation while the beat of the day slowly builds.</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Energy:</div>
+    <p> Starts at 30% and reaches 100% by the evening. </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Green Flags:</div>
+    <ul>
+      <li>Empathetic and sensitive</li>
+      <li>Always up to date on the latest gossip</li>
+      <li>Without you, nights out aren’t spicy enough to be worth telling</li>
+    </ul>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Red Flags:</div>
+    <ul>
+      <li>Talkative</li>
+      <li>Eternally indecisive</li>
+      <li>Easily influenced by other people’s opinions</li>
+    </ul>
+  </div>
+`
     },
     MP: {
       image: [
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/macchiato.png",
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/Macchiato%20Performer.png"
       ],
-      description: `The Mood: “Always Number 1”
-      
-Description: You like to own the scene, set the rhythm, and leave nothing to chance. You don’t follow the flow: you create it. When you walk into a room, people feel it thanks to your natural leadership. You know how to be sweet without losing your intensity, but be careful not to assume everyone is like you.
-
-Energy: 80%
-
-Green Flags:
-
-* Balanced, but with character
-* Responsible and independent
-* Feedback-friendly
-
-Red Flags:
-
-* You expect too much
-* Touchy
-* You tend to always be at the center of attention
-
-Your combo: Caffè macchiato, apricot juice & chocolate croissant`
+      description: `  <div class="result-section">
+    <div class="result-label">The Mood</div>
+    <p>"Always Number 1".</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Your combo</div>
+    <p> Caffè macchiato, apricot juice & chocolate croissant </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Descrizione:</div>
+    <p> You like to own the scene, set the rhythm, and leave nothing to chance. You don’t follow the flow: you create it. When you walk into a room, people feel it thanks to your natural leadership. You know how to be sweet without losing your intensity, but be careful not to assume everyone is like you </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Energy:</div>
+    <p>80%</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Green Flags:</div>
+    <ul>
+      <li>Balanced, but with character</li>
+      <li>Responsible and independent</li>
+      <li>Feedback-friendly</li>
+    </ul>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Red Flags:</div>
+    <ul>
+      <li>You expect too much</li>
+      <li>Touchy</li>
+      <li>You tend to always be at the center of attention</li>
+    </ul>
+  </div>
+`
     },
     DZ: {
       image: [
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/deca.png",
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/Deca%20Zen.png"
       ],
-      description: `The Mood: “Balance in every sip".
-      
-Description: The world moves around him, but he stays centered. Deca Zen doesn’t chase the day; he moves with it. Coffee is pure pleasure, not a boost: balance and harmony define his rhythm. There are no problems you can’t handle or situations you can’t control; everything feels simple to you and starts with a nice decaf coffee.
-
-Energy: 50%
-
-Green Flags:
-
-* No one is less stressed than you
-* You have a solution for every problem, also because for you, real problems don’t exist
-* Optimistic
-
-Red Flags:
-
-* Chronically late
-* Superficial
-* Disorganized
-
-Your combo: Decaf coffee, blueberry juice & chocolate croissant`
+      description: `  <div class="result-section">
+    <div class="result-label">The Mood</div>
+    <p>"Balance in every sip".</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Your combo</div>
+    <p> Decaf coffee, blueberry juice & chocolate croissant </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label"> description:</div>
+    <p> The world moves around him, but he stays centered. Deca Zen doesn’t chase the day; he moves with it. Coffee is pure pleasure, not a boost: balance and harmony define his rhythm. There are no problems you can’t handle or situations you can’t control; everything feels simple to you and starts with a nice decaf coffee. </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Energy:</div>
+    <p>50%</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Green Flags:</div>
+    <ul>
+      <li>No one is less stressed than you</li>
+      <li>You have a solution for every problem, also because for you, real problems don’t exist</li>
+      <li> Optimistic</li>
+    </ul>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Red Flags:</div>
+    <ul>
+      <li>Chronically late</li>
+      <li> Superficial</li>
+      <li>Disorganized </li>
+    </ul>
+  </div>`
     },
     EM: {
       image: [
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/martini.png",
         "https://raw.githubusercontent.com/CaffeVergnano/SoftClubbing-/main/Espresso%20Martini%20Nightrunner.png"
       ],
-      description: `The Mood: “The night doesn’t end, it evolves".
-      
-Description: For those who live between night and morning. The Espresso Martini is the twist of the day: it doesn’t follow the flow, it transforms it. You enter the “Morning Club” with the attitude of someone who has already experienced it all — and still wants one last round. Nothing can be ordinary; you like things that are complex and multi-layered, otherwise there’s no challenge for you. You’re eclectic, but often hard to understand.
-
-Energy: 70%
-
-Green Flags:
-
-* Dreamer
-* Sophisticated and always on trend
-* Original
-
-Red Flags:
-
-* Wow, you really do love showing off
-* More complicated than a Rubik’s Cube
-* Mysterious until the very end
-
-Your combo: Espresso Martini & toast`
+      description: `  <div class="result-section">
+    <div class="result-label">The Mood</div>
+    <p>"The night doesn’t end, it evolves".</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">The combo</div>
+    <p> Espresso Martini & toast </p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Description:</div>
+    <p  For those who live between night and morning. The Espresso Martini is the twist of the day: it doesn’t follow the flow, it transforms it. You enter the “Morning Club” with the attitude of someone who has already experienced it all — and still wants one last round. Nothing can be ordinary; you like things that are complex and multi-layered, otherwise there’s no challenge for you. You’re eclectic, but often hard to understand.</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Energy:</div>
+    <p>70%</p>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Green Flags:</div>
+    <ul>
+      <li>Dreamer</li>
+      <li>Sophisticated and always on trend</li>
+      <li>Original</li>
+    </ul>
+  </div>
+  <div class="result-section">
+    <div class="result-label">Red Flags:</div>
+    <ul>
+      <li>Wow, you really do love showing off</li>
+      <li>More complicated than a Rubik’s Cube</li>
+      <li>Mysterious until the very end</li>
+    </ul>
+  </div>`
     }
   };
     
@@ -614,7 +825,7 @@ Your combo: Espresso Martini & toast`
         <img src="${resultImages[1]}" class="result-image" alt="${resultName}" />
       </div>
 
-      <p class="result-description">${result.description}</p>
+      <div class="result-description">${result.description}</div>
 
       <button class="restart-btn" onclick="restartQuiz()">Ricomincia il quiz</button>
     </div>
